@@ -4,6 +4,7 @@ const imageView = document.getElementById("image-view");
 const grayscaleSlider = document.getElementById("grayscale-slider");
 const opacitySlider = document.getElementById("opacity-slider");
 const blurSlider = document.getElementById("blur-slider");
+const brightnessSlider = document.getElementById("brightness-slider");
 inputFile.addEventListener("change", uploadImage);
 function uploadImage() {
   let imgLink = URL.createObjectURL(inputFile.files[0]);
@@ -28,6 +29,10 @@ opacitySlider.addEventListener("input", () => {
   imageView.style.opacity = opacityValue;
 });
 blurSlider.addEventListener("input", () => {
-  const blueValue = blurSlider.value;
-  imageView.style.filter = `blur(${blueValue}px)`;
+  const blurValue = blurSlider.value;
+  imageView.style.filter = `blur(${blurValue}px)`;
+});
+brightnessSlider.addEventListener("input", () => {
+  const brightnessValue = brightnessSlider.value / 100;
+  imageView.style.filter = `brightness(${brightnessValue})`;
 });

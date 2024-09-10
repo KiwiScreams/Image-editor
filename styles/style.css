@@ -68,6 +68,26 @@ p
 {
     width: 100%;
 }
+.filter-container input[type="range"]
+{
+    background-color: #000;
+    accent-color: #88ff78;
+}
+button
+{
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid #8686ff;
+    border-radius: 30px;
+    cursor: pointer;
+}
+button:hover
+{
+    opacity: 0.8;
+    background-color: #8686ff;
+    color: white;
+}
 #save-image
 {
     background: linear-gradient(to right bottom,#8686ff, #88ff78);
@@ -76,4 +96,5 @@ p
     height: 30px;
     border-radius: 10px;
     margin-top: 20px;
+    border: none;
 }

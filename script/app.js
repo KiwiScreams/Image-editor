@@ -52,3 +52,7 @@ saturateSlider.addEventListener("input", () => {
   const saturateValue = saturateSlider.value;
   imageView.style.filter = `saturate(${saturateValue})`;
 });
+sepiaSlider.addEventListener("input", () => {
+  const sepiaValue = sepiaSlider.value / 100;
+  imageView.style.filter = `sepia(${sepiaValue})`;
+});

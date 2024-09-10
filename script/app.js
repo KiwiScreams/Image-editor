@@ -44,3 +44,7 @@ hueRotateSlider.addEventListener("input", () => {
   const hueRotateValue = hueRotateSlider.value;
   imageView.style.filter = `hue-rotate(${hueRotateValue}deg)`;
 });
+invertSlider.addEventListener("input", () => {
+  const invertValue = invertSlider.value / 100;
+  imageView.style.filter = `invert(${invertValue})`;
+});

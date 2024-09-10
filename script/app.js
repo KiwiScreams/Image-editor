@@ -5,6 +5,14 @@ const grayscaleSlider = document.getElementById("grayscale-slider");
 const opacitySlider = document.getElementById("opacity-slider");
 const blurSlider = document.getElementById("blur-slider");
 const brightnessSlider = document.getElementById("brightness-slider");
+
+const contrastSlider = document.getElementById("contrast-slider");
+const hueRotateSlider = document.getElementById("hue-rotate-slider");
+const invertSlider = document.getElementById("invert-slider");
+const saturateSlider = document.getElementById("saturate-slider");
+const sepiaSlider = document.getElementById("sepia-slider");
+const shadowSlider = document.getElementById("shadow-slider");
+
 inputFile.addEventListener("change", uploadImage);
 function uploadImage() {
   let imgLink = URL.createObjectURL(inputFile.files[0]);

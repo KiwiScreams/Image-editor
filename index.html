@@ -9,17 +9,77 @@
   <body>
     <div class="core-container">
       <div class="filter-container">
-        <input type="range" id="grayscale-slider" min="0" max="100" value="0" />
-        <input type="range" id="opacity-slider" min="0" max="100" value="100" />
-        <input type="range" id="blur-slider" min="0" max="100" value="0" />
-        <input
-          type="range"
-          id="brightness-slider"
-          name="brightness"
-          min="0"
-          max="200"
-          value="100"
-        />
+        <div id="grayscale-control">
+          <input
+            type="range"
+            id="grayscale-slider"
+            min="0"
+            max="100"
+            value="0"
+          />
+          <label for="grayscale-slider">Grayscale</label>
+        </div>
+        <div id="opacity-control">
+          <input
+            type="range"
+            id="opacity-slider"
+            min="0"
+            max="100"
+            value="100"
+          />
+          <label for="opacity-slider">Opacity</label>
+        </div>
+        <div id="blur-control">
+          <input type="range" id="blur-slider" min="0" max="100" value="0" />
+          <label for="blur-slider">Blur</label>
+        </div>
+        <div id="brightness-control">
+          <input
+            type="range"
+            id="brightness-slider"
+            name="brightness"
+            min="0"
+            max="200"
+            value="100"
+          />
+          <label for="brightness-slider">Brightness</label>
+        </div>
+        <div id="contrast-control">
+          <input
+            type="range"
+            id="contrast-slider"
+            min="0"
+            max="200"
+            value="100"
+          />
+          <label for="contrast-slider">Contrast</label>
+        </div>
+        <div id="hue-rotate-control">
+          <input
+            type="range"
+            id="hue-rotate-slider"
+            min="0"
+            max="360"
+            value="0"
+          />
+          <label for="hue-rotate-slider">Hue Rotate</label>
+        </div>
+        <div id="invert-control">
+          <input type="range" id="invert-slider" min="0" max="100" value="0" />
+          <label for="invert-slider">Invert</label>
+        </div>
+        <div id="saturate-control">
+          <input type="range" id="saturate-slider" min="0" max="10" value="1" />
+          <label for="saturate-slider">Saturate</label>
+        </div>
+        <div id="sepia-control">
+          <input type="range" id="sepia-slider" min="0" max="100" value="0" />
+          <label for="sepia-slider">Sepia</label>
+        </div>
+        <div id="shadow-control">
+          <input type="range" id="shadow-slider" min="0" max="20" value="0" />
+          <label for="shadow-slider">Shadow</label>
+        </div>
       </div>
       <label for="input-file" id="drop-area">
         <input type="file" id="input-file" accept="image/*" hidden />

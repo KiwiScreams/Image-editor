@@ -12,7 +12,24 @@ const saturateSlider = document.getElementById("saturate-slider");
 const sepiaSlider = document.getElementById("sepia-slider");
 const shadowSlider = document.getElementById("shadow-slider");
 const shadowColorInput = document.getElementById("shadow-color");
+const rotateLeftButton = document.getElementById("rotate-left");
+const rotateRightButton = document.getElementById("rotate-right");
+const resetRotationButton = document.getElementById("reset-rotation");
+let rotation = 0;
+rotateLeftButton.addEventListener("click", () => {
+  rotation -= 90;
+  imageView.style.transform = `rotate(${rotation}deg)`;
+});
 
+rotateRightButton.addEventListener("click", () => {
+  rotation += 90;
+  imageView.style.transform = `rotate(${rotation}deg)`;
+});
+
+resetRotationButton.addEventListener("click", () => {
+  rotation = 0;
+  imageView.style.transform = `rotate(${rotation}deg)`;
+});
 inputFile.addEventListener("change", uploadImage);
 function uploadImage() {
   let imgLink = URL.createObjectURL(inputFile.files[0]);

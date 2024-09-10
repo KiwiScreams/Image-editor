@@ -3,6 +3,7 @@ const inputFile = document.getElementById("input-file");
 const imageView = document.getElementById("image-view");
 const grayscaleSlider = document.getElementById("grayscale-slider");
 const opacitySlider = document.getElementById("opacity-slider");
+const blurSlider = document.getElementById("blur-slider");
 inputFile.addEventListener("change", uploadImage);
 function uploadImage() {
   let imgLink = URL.createObjectURL(inputFile.files[0]);
@@ -23,6 +24,10 @@ grayscaleSlider.addEventListener("input", () => {
   imageView.style.filter = `grayscale(${grayscaleValue}%)`;
 });
 opacitySlider.addEventListener("input", () => {
-    const opacityValue = opacitySlider.value / 100;
-    imageView.style.opacity = opacityValue;
-  });
+  const opacityValue = opacitySlider.value / 100;
+  imageView.style.opacity = opacityValue;
+});
+blurSlider.addEventListener("input", () => {
+  const blueValue = blurSlider.value;
+  imageView.style.filter = `blur(${blueValue}px)`;
+});

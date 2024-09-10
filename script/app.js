@@ -15,20 +15,50 @@ const shadowColorInput = document.getElementById("shadow-color");
 const rotateLeftButton = document.getElementById("rotate-left");
 const rotateRightButton = document.getElementById("rotate-right");
 const resetRotationButton = document.getElementById("reset-rotation");
+const saveImageButton = document.getElementById("save-image");
 let rotation = 0;
 rotateLeftButton.addEventListener("click", () => {
   rotation -= 90;
   imageView.style.transform = `rotate(${rotation}deg)`;
 });
-
 rotateRightButton.addEventListener("click", () => {
   rotation += 90;
   imageView.style.transform = `rotate(${rotation}deg)`;
 });
-
 resetRotationButton.addEventListener("click", () => {
   rotation = 0;
   imageView.style.transform = `rotate(${rotation}deg)`;
+});
+saveImageButton.addEventListener("click", () => {
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+  const image = new Image();
+
+  image.src = imageView.style.backgroundImage
+    .replace(/^url\(["']?/, "")
+    .replace(/["']?\)$/, "");
+  image.onload = () => {
+    const transformedWidth = imageView.offsetWidth;
+    const transformedHeight = imageView.offsetHeight;
+
+    canvas.width = transformedWidth;
+    canvas.height = transformedHeight;
+    const filteredCanvas = document.createElement("canvas");
+    const filteredCtx = filteredCanvas.getContext("2d");
+    filteredCanvas.width = transformedWidth;
+    filteredCanvas.height = transformedHeight;
+    filteredCtx.save();
+    filteredCtx.translate(transformedWidth / 2, transformedHeight / 2);
+    filteredCtx.rotate((rotation * Math.PI) / 180);
+    filteredCtx.filter = imageView.style.filter;
+    filteredCtx.drawImage(image, -transformedWidth / 2, -transformedHeight / 2);
+    filteredCtx.restore();
+    const filteredImageDataURL = filteredCanvas.toDataURL("image/png");
+    const link = document.createElement("a");
+    link.download = "edited_image.png";
+    link.href = filteredImageDataURL;
+    link.click();
+  };
 });
 inputFile.addEventListener("change", uploadImage);
 function uploadImage() {

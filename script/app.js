@@ -40,3 +40,7 @@ contrastSlider.addEventListener("input", () => {
   const contrastValue = contrastSlider.value / 100;
   imageView.style.filter = `contrast(${contrastValue})`;
 });
+hueRotateSlider.addEventListener("input", () => {
+  const hueRotateValue = hueRotateSlider.value;
+  imageView.style.filter = `hue-rotate(${hueRotateValue}deg)`;
+});

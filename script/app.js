@@ -36,3 +36,7 @@ brightnessSlider.addEventListener("input", () => {
   const brightnessValue = brightnessSlider.value / 100;
   imageView.style.filter = `brightness(${brightnessValue})`;
 });
+contrastSlider.addEventListener("input", () => {
+  const contrastValue = contrastSlider.value / 100;
+  imageView.style.filter = `contrast(${contrastValue})`;
+});

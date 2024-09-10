@@ -18,6 +18,7 @@ const resetRotationButton = document.getElementById("reset-rotation");
 const flipRotationButton = document.getElementById("flip-rotation");
 const saveImageButton = document.getElementById("save-image");
 let rotation = 0;
+let flipState = 1;
 rotateLeftButton.addEventListener("click", () => {
   rotation -= 90;
   imageView.style.transform = `rotate(${rotation}deg)`;
@@ -27,9 +28,9 @@ rotateRightButton.addEventListener("click", () => {
   imageView.style.transform = `rotate(${rotation}deg)`;
 });
 flipRotationButton.addEventListener("click", () => {
-    rotation = 0;
-    imageView.style.transform = `scaleX(-1)`;
-  });
+  flipState = flipState === 1 ? -1 : 1;
+  imageView.style.transform = `scaleX(${flipState})`;
+});
 resetRotationButton.addEventListener("click", () => {
   rotation = 0;
   imageView.style.transform = `rotate(${rotation}deg)`;

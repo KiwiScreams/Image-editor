@@ -5,13 +5,13 @@ const grayscaleSlider = document.getElementById("grayscale-slider");
 const opacitySlider = document.getElementById("opacity-slider");
 const blurSlider = document.getElementById("blur-slider");
 const brightnessSlider = document.getElementById("brightness-slider");
-
 const contrastSlider = document.getElementById("contrast-slider");
 const hueRotateSlider = document.getElementById("hue-rotate-slider");
 const invertSlider = document.getElementById("invert-slider");
 const saturateSlider = document.getElementById("saturate-slider");
 const sepiaSlider = document.getElementById("sepia-slider");
 const shadowSlider = document.getElementById("shadow-slider");
+const shadowColorInput = document.getElementById("shadow-color");
 
 inputFile.addEventListener("change", uploadImage);
 function uploadImage() {
@@ -66,5 +66,6 @@ sepiaSlider.addEventListener("input", () => {
 });
 shadowSlider.addEventListener("input", () => {
   const shadowValue = shadowSlider.value;
-  imageView.style.filter = `drop-shadow(${shadowValue}px ${shadowValue}px 10px green)`;
+  const shadowColor = shadowColorInput.value;
+  imageView.style.filter = `drop-shadow(${shadowValue}px ${shadowValue}px 10px ${shadowColor})`;
 });

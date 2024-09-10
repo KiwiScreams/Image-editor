@@ -48,3 +48,7 @@ invertSlider.addEventListener("input", () => {
   const invertValue = invertSlider.value / 100;
   imageView.style.filter = `invert(${invertValue})`;
 });
+saturateSlider.addEventListener("input", () => {
+  const saturateValue = saturateSlider.value;
+  imageView.style.filter = `saturate(${saturateValue})`;
+});

@@ -40,6 +40,9 @@ flipVerticalButton.addEventListener("click", () => {
 resetRotationButton.addEventListener("click", () => {
   rotation = 0;
   imageView.style.transform = `rotate(${rotation}deg)`;
+  flipState = 1;
+  flipVerticalState = 1;
+  imageView.style.transform = `scaleX(${flipState}) scaleY(${flipVerticalState})`;
 });
 saveImageButton.addEventListener("click", () => {
   const canvas = document.createElement("canvas");

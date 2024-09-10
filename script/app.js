@@ -15,6 +15,7 @@ const shadowColorInput = document.getElementById("shadow-color");
 const rotateLeftButton = document.getElementById("rotate-left");
 const rotateRightButton = document.getElementById("rotate-right");
 const resetRotationButton = document.getElementById("reset-rotation");
+const flipRotationButton = document.getElementById("flip-rotation");
 const saveImageButton = document.getElementById("save-image");
 let rotation = 0;
 rotateLeftButton.addEventListener("click", () => {
@@ -25,6 +26,10 @@ rotateRightButton.addEventListener("click", () => {
   rotation += 90;
   imageView.style.transform = `rotate(${rotation}deg)`;
 });
+flipRotationButton.addEventListener("click", () => {
+    rotation = 0;
+    imageView.style.transform = `scaleX(-1)`;
+  });
 resetRotationButton.addEventListener("click", () => {
   rotation = 0;
   imageView.style.transform = `rotate(${rotation}deg)`;

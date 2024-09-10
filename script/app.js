@@ -1,6 +1,6 @@
 const dropArea = document.getElementById("drop-area");
 const inputFile = document.getElementById("input-file");
-const imageView = document.getElementById("image-view");
+const imageView = document.getElementById("image-view"); // Move this to the top
 const grayscaleSlider = document.getElementById("grayscale-slider");
 const opacitySlider = document.getElementById("opacity-slider");
 const blurSlider = document.getElementById("blur-slider");
@@ -14,7 +14,7 @@ const shadowSlider = document.getElementById("shadow-slider");
 const shadowColorInput = document.getElementById("shadow-color");
 const rotateLeftButton = document.getElementById("rotate-left");
 const rotateRightButton = document.getElementById("rotate-right");
-const resetRotationButton = document.getElementById("reset-rotation");
+const resetButton = document.getElementById("reset");
 const flipRotationButton = document.getElementById("flip-rotation");
 const saveImageButton = document.getElementById("save-image");
 const flipVerticalButton = document.getElementById("flip-vertical");
@@ -37,12 +37,19 @@ flipVerticalButton.addEventListener("click", () => {
   flipVerticalState = flipVerticalState === 1 ? -1 : 1;
   imageView.style.transform = `scaleX(${flipState}) scaleY(${flipVerticalState})`;
 });
-resetRotationButton.addEventListener("click", () => {
+resetButton.addEventListener("click", () => {
   rotation = 0;
   imageView.style.transform = `rotate(${rotation}deg)`;
   flipState = 1;
   flipVerticalState = 1;
   imageView.style.transform = `scaleX(${flipState}) scaleY(${flipVerticalState})`;
+  const rangeInputs = document.querySelectorAll('input[type="range"]');
+  rangeInputs.forEach((input) => {
+    input.value = input.defaultValue;
+  });
+  const shadowColorInput = document.getElementById("shadow-color");
+  shadowColorInput.value = "#008000";
+  imageView.style.filter = "none";
 });
 saveImageButton.addEventListener("click", () => {
   const canvas = document.createElement("canvas");

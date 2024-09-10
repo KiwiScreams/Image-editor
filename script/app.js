@@ -23,6 +23,6 @@ grayscaleSlider.addEventListener("input", () => {
   imageView.style.filter = `grayscale(${grayscaleValue}%)`;
 });
 opacitySlider.addEventListener("input", () => {
-    const opacityValue = opacitySlider.value;
+    const opacityValue = opacitySlider.value / 100;
     imageView.style.opacity = opacityValue;
   });

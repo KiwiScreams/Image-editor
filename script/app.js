@@ -64,3 +64,7 @@ sepiaSlider.addEventListener("input", () => {
   const sepiaValue = sepiaSlider.value / 100;
   imageView.style.filter = `sepia(${sepiaValue})`;
 });
+shadowSlider.addEventListener("input", () => {
+  const shadowValue = shadowSlider.value;
+  imageView.style.filter = `drop-shadow(${shadowValue}px ${shadowValue}px 10px green)`;
+});
